@@ -3,107 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sample Merch — tiny runs of really good-looking merch</title>
-<meta name="description" content="A sample merch shop: small batch runs, no minimums, no setup fees. Demo site.">
+<title>Samantha — The Closet</title>
+<meta name="description" content="Six pieces from Samantha's actual rotation. Small batch, no restocks. A demo storefront.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="nav">
-  <nav class="nav-left">
-    <a href="#rack">Shop</a>
-    <a href="#grid">Lookbook</a>
-  </nav>
-  <a class="logo" href="#top">Sample Merch</a>
-  <nav class="nav-right">
+  <a class="wordmark" href="#top">samantha</a>
+  <nav class="nav-links">
+    <a href="#shop">Shop</a>
     <a href="#about">About</a>
-    <button class="cart-link" id="cart-open" type="button">Cart (<span id="cart-count">0</span>)</button>
+    <button class="nav-cart" id="cart-open" type="button">Cart&nbsp;(<span id="cart-count">0</span>)</button>
   </nav>
 </header>
 
 <main id="top">
 
-  <!-- HERO: the virtual clothing rack -->
-  <section class="hero" id="rack" aria-label="The rack">
-    <div class="rail-wrap">
-      <div class="rail-mount left"></div>
-      <div class="rail"></div>
-      <div class="rail-mount right"></div>
-    </div>
-    <div class="shirts" id="shirts" role="list" aria-label="Shirts on the rack — click one to view"></div>
-    <p class="micro">tiny runs of really good-looking merch &mdash; no minimums, no setup fees</p>
-    <div class="featured">
-      <span class="featured-label">this week&rsquo;s drop</span>
-      <span class="featured-name" id="featured-name">Wildflower Script Tee &mdash; $38</span>
-      <button class="pill" id="featured-add" type="button">Add to cart</button>
-    </div>
+  <section class="hero">
+    <h1>The closet,<br>shoppable.</h1>
+    <p class="lede">Six pieces from Samantha&rsquo;s actual rotation &mdash; the red dress from the bowling reel, the denim set, the sari. Cut in small batches. When they&rsquo;re gone, they&rsquo;re gone.</p>
+    <a class="cta" href="#shop">Shop the closet</a>
   </section>
 
-  <!-- PRODUCT CAROUSEL -->
-  <section class="carousel" id="carousel" aria-label="Product view" hidden>
-    <button class="car-close" id="car-close" type="button" aria-label="Back to the rack">&times;</button>
-    <div class="car-stage">
-      <button class="car-arrow left" id="car-prev" type="button" aria-label="Previous product">&#8249;</button>
-      <div class="car-shown" id="car-shown"></div>
-      <button class="car-arrow right" id="car-next" type="button" aria-label="Next product">&#8250;</button>
-      <div class="car-ghost left" id="car-ghost-left"></div>
-      <div class="car-ghost right" id="car-ghost-right"></div>
-    </div>
-    <div class="car-info">
-      <h2 class="car-name" id="car-name"></h2>
-      <p class="car-price" id="car-price"></p>
-      <button class="pill" id="car-add" type="button">Add to cart</button>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>no minimums</span><span>&bull;</span><span>small batch</span><span>&bull;</span>
-      <span>really good-looking merch</span><span>&bull;</span><span>no setup fees</span><span>&bull;</span>
-      <span>no minimums</span><span>&bull;</span><span>small batch</span><span>&bull;</span>
-      <span>really good-looking merch</span><span>&bull;</span><span>no setup fees</span><span>&bull;</span>
-    </div>
-  </div>
-
-  <!-- SHOP GRID -->
-  <section class="grid-section" id="grid">
-    <h2 class="section-title">the whole rack, shoppable</h2>
+  <section class="shop" id="shop">
     <div class="grid" id="grid"></div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about" id="about">
-    <h2 class="section-title">what&rsquo;s the deal</h2>
-    <p class="about-copy">
-      We do small batch runs of really good-looking merch for startups and small teams.
-      No minimums. No setup fees. You bring the idea, we put it on a shirt &mdash;
-      and this is a <em>sample</em> site, so nothing here is actually for sale.
-    </p>
+    <h2>Why this exists</h2>
+    <p>Every piece here is something Samantha has actually worn &mdash; on the lane, on the course, on camera. We photographed each garment, cut a small run, and put it up here. Nothing is mass-produced, and nothing restocks. This is a demo storefront, so nothing is actually for sale.</p>
   </section>
 
 </main>
 
 <footer class="footer">
-  <span class="micro">sample merch co. &mdash; a demo storefront</span>
-  <span class="micro"><a href="#top">back to top</a></span>
+  <span>Samantha &mdash; The Closet. A demo.</span>
 </footer>
 
-<!-- CART DRAWER -->
 <div class="overlay" id="overlay" hidden></div>
 <aside class="drawer" id="drawer" aria-label="Shopping cart" hidden>
   <div class="drawer-head">
-    <h2>your cart</h2>
-    <button class="car-close" id="cart-close" type="button" aria-label="Close cart">&times;</button>
+    <h2>Cart</h2>
+    <button class="drawer-close" id="cart-close" type="button" aria-label="Close cart">&times;</button>
   </div>
   <div class="drawer-items" id="drawer-items"></div>
   <div class="drawer-foot">
-    <div class="subtotal"><span>subtotal</span><span id="subtotal">$0</span></div>
-    <button class="pill wide" id="checkout" type="button">Checkout</button>
-    <p class="micro">demo checkout &mdash; no real orders</p>
+    <div class="subtotal"><span>Subtotal</span><span id="subtotal">$0</span></div>
+    <button class="cta full" id="checkout" type="button">Checkout</button>
+    <p class="fineprint">Demo checkout &mdash; no real orders.</p>
   </div>
 </aside>
 
