@@ -4,38 +4,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Samantha — The Closet</title>
-<meta name="description" content="Six pieces from Samantha's actual rotation. Small batch, no restocks. A demo storefront.">
+<meta name="description" content="Samantha's actual rotation, on the rack. Pick a hanger. A demo storefront.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="nav">
-  <a class="wordmark" href="#top">samantha</a>
-  <nav class="nav-links">
-    <a href="#shop">Shop</a>
-    <a href="#about">About</a>
+  <a class="nav-link" href="#about">About</a>
+  <a class="wordmark" href="#top">Samantha</a>
+  <div class="nav-right">
+    <a class="nav-link" href="#pieces">Contact</a>
     <button class="nav-cart" id="cart-open" type="button">Cart&nbsp;(<span id="cart-count">0</span>)</button>
-  </nav>
+  </div>
 </header>
 
 <main id="top">
 
   <section class="hero">
     <h1>The closet,<br>shoppable.</h1>
-    <p class="lede">Six pieces from Samantha&rsquo;s actual rotation &mdash; the red dress from the bowling reel, the denim set, the sari. Cut in small batches. When they&rsquo;re gone, they&rsquo;re gone.</p>
-    <a class="cta" href="#shop">Shop the closet</a>
+    <p class="lede">Six pieces from Samantha&rsquo;s actual rotation &mdash; pick a hanger off the rack.</p>
   </section>
 
-  <section class="shop" id="shop">
-    <div class="grid" id="grid"></div>
+  <section class="rack-stage" id="rack-stage" aria-label="Clothing rack">
+    <div class="bar" aria-hidden="true">
+      <span class="plate left"></span>
+      <span class="plate right"></span>
+    </div>
+    <div class="hangers" id="hangers"><!-- built by app.js --></div>
+
+    <aside class="detail" id="detail" hidden aria-label="Product detail">
+      <button class="detail-close" id="detail-close" type="button" aria-label="Back to rack">&times;</button>
+      <div class="detail-counter"><button id="prev" type="button" aria-label="Previous piece">&lsaquo;</button><span id="counter">1 of 6</span><button id="next" type="button" aria-label="Next piece">&rsaquo;</button></div>
+      <h2 class="detail-name" id="detail-name"></h2>
+      <div class="detail-panel">
+        <div class="vol">Vol. 1</div>
+        <div class="detail-kicker" id="detail-kicker"></div>
+        <div class="detail-price" id="detail-price"></div>
+        <div class="stock">In stock</div>
+        <button class="pill solid" id="detail-add" type="button">Add to cart</button>
+        <p class="detail-note" id="detail-note"></p>
+      </div>
+    </aside>
+  </section>
+
+  <div class="rack-cta">
+    <button class="pill outline" id="see-availability" type="button">See availability</button>
+  </div>
+
+  <section class="pieces" id="pieces">
+    <h3>The pieces</h3>
+    <ol class="piece-index" id="piece-index"><!-- built by app.js --></ol>
   </section>
 
   <section class="about" id="about">
     <h2>Why this exists</h2>
-    <p>Every piece here is something Samantha has actually worn &mdash; on the lane, on the course, on camera. We photographed each garment, cut a small run, and put it up here. Nothing is mass-produced, and nothing restocks. This is a demo storefront, so nothing is actually for sale.</p>
+    <p>Every piece here is something Samantha has actually worn &mdash; on the lane, on the course, on camera. We photographed each garment, cut a small run, and hung it on the rack. Nothing is mass-produced, and nothing restocks. This is a demo storefront, so nothing is actually for sale.</p>
   </section>
 
 </main>
@@ -43,6 +69,16 @@
 <footer class="footer">
   <span>Samantha &mdash; The Closet. A demo.</span>
 </footer>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker-track">
+    <span>New pieces from the rotation</span><i>&bull;</i>
+    <span>Small batch &mdash; no restocks</span><i>&bull;</i>
+    <span>The bowling dress</span><i>&bull;</i>
+    <span>The golf-course dress</span><i>&bull;</i>
+    <span>Demo only</span><i>&bull;</i>
+  </div>
+</div>
 
 <div class="overlay" id="overlay" hidden></div>
 <aside class="drawer" id="drawer" aria-label="Shopping cart" hidden>
@@ -53,7 +89,7 @@
   <div class="drawer-items" id="drawer-items"></div>
   <div class="drawer-foot">
     <div class="subtotal"><span>Subtotal</span><span id="subtotal">$0</span></div>
-    <button class="cta full" id="checkout" type="button">Checkout</button>
+    <button class="pill solid full" id="checkout" type="button">Checkout</button>
     <p class="fineprint">Demo checkout &mdash; no real orders.</p>
   </div>
 </aside>
