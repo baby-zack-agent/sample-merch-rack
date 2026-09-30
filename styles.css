@@ -63,6 +63,11 @@ a:hover { text-decoration: underline; }
   transform: rotate(-2deg);
 }
 .logo:hover { text-decoration: none; }
+.nav a.logo {
+  font-size: 40px;
+  letter-spacing: normal;
+  text-transform: none;
+}
 
 /* ---------- HERO RACK ---------- */
 .hero { padding: 34px 16px 10px; text-align: center; }
@@ -95,17 +100,21 @@ a:hover { text-decoration: underline; }
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: clamp(2px, 1vw, 14px);
+  gap: clamp(2px, 0.8vw, 10px);
   max-width: 1080px;
   margin: -4px auto 0;
-  padding: 0 20px;
+  padding: 10px 20px 16px;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.shirts::-webkit-scrollbar { display: none; }
 
 .shirt-item {
   flex: 0 0 auto;
-  width: clamp(74px, 9.5vw, 118px);
+  width: clamp(64px, 8.5vw, 100px);
   cursor: pointer;
   transform-origin: 50% 0;
   animation: sway var(--dur, 5.5s) ease-in-out var(--delay, 0s) infinite;

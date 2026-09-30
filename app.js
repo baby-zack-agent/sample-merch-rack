@@ -17,16 +17,16 @@ const PRODUCTS = [
 
 function hangerSVG() {
   return `
-    <path d="M60 14 C58 7 53 4 50 7 C47 10 50 14 54 13" fill="none" stroke="#8a6a3f" stroke-width="3.4" stroke-linecap="round"/>
-    <path d="M60 14 L30 32 M60 14 L90 32" stroke="#b98a4e" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="60" cy="14" r="2.6" fill="#8a6a3f"/>`;
+    <path d="M60 12 C59 6 55 3 52 5 C49 7 51 11 55 10" fill="none" stroke="#8a6a3f" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M60 12 L44 28 M60 12 L76 28" stroke="#b98a4e" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="60" cy="12" r="2" fill="#8a6a3f"/>`;
 }
 
 function teeBody(p) {
   const body = p.long
     ? "M50 32 L30 38 L16 116 L30 120 L40 62 L40 148 L80 148 L80 62 L90 120 L104 116 L90 38 L70 32 C64 40 56 42 52 40 C48 38 46 35 50 32 Z"
     : "M50 32 L30 38 L14 62 L28 68 L36 56 L36 148 L84 148 L84 56 L92 68 L106 62 L90 38 L70 32 C64 40 56 42 52 40 C48 38 46 35 50 32 Z";
-  return `<path d="${body}" fill="${p.color}" stroke="rgba(0,0,0,0.10)" stroke-width="1.5"/>`;
+  return `<path d="${body}" fill="${p.color}" stroke="rgba(0,0,0,0.20)" stroke-width="1.5"/>`;
 }
 
 function graphicSVG(p) {
@@ -34,23 +34,23 @@ function graphicSVG(p) {
   switch (p.graphic) {
     case "script-flowers":
       return `
-        <text x="60" y="92" text-anchor="middle" font-family="Caveat, cursive" font-size="26" font-weight="700" fill="#e4572e" transform="rotate(-4 60 92)">wildflowers</text>
+        <text x="60" y="92" text-anchor="middle" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#e4572e" transform="rotate(-4 60 92)" textLength="46" lengthAdjust="spacingAndGlyphs">wildflowers</text>
         <g fill="#e4572e"><circle cx="38" cy="76" r="3.4"/><circle cx="84" cy="80" r="3.4"/></g>
         <g fill="#7ba05b"><circle cx="44" cy="70" r="2.6"/><circle cx="78" cy="74" r="2.6"/></g>
         <g fill="#f2b134"><circle cx="60" cy="70" r="3"/></g>`;
     case "stacked-text":
       return `
-        <text x="60" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="${ink}">ESCAPE</text>
-        <text x="60" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="${ink}">THE</text>
-        <text x="60" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="${ink}">ORDINARY</text>`;
+        <text x="60" y="78" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="${ink}" textLength="40" lengthAdjust="spacingAndGlyphs">ESCAPE</text>
+        <text x="60" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="${ink}" textLength="40" lengthAdjust="spacingAndGlyphs">THE</text>
+        <text x="60" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="${ink}" textLength="40" lengthAdjust="spacingAndGlyphs">ORDINARY</text>`;
     case "chest-text":
-      return `<text x="60" y="66" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="3" fill="${ink}">SAMPLE SUPPLY</text>`;
+      return `<text x="60" y="66" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" letter-spacing="2" fill="${ink}" textLength="38" lengthAdjust="spacingAndGlyphs">SAMPLE SUPPLY</text>`;
     case "number23":
       return `
-        <text x="60" y="74" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="4" fill="${ink}">COME WITH</text>
+        <text x="60" y="74" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2.5" fill="${ink}" textLength="38" lengthAdjust="spacingAndGlyphs">COME WITH</text>
         <text x="60" y="118" text-anchor="middle" font-family="Caveat, cursive" font-size="52" font-weight="700" fill="${ink}">23</text>`;
     case "script":
-      return `<text x="60" y="98" text-anchor="middle" font-family="Caveat, cursive" font-size="30" font-weight="700" fill="${ink}" transform="rotate(-5 60 98)">merch!</text>`;
+      return `<text x="60" y="98" text-anchor="middle" font-family="Caveat, cursive" font-size="24" font-weight="700" fill="${ink}" transform="rotate(-5 60 98)" textLength="42" lengthAdjust="spacingAndGlyphs">merch!</text>`;
     case "sun":
       return `
         <circle cx="60" cy="92" r="14" fill="${ink}"/>
